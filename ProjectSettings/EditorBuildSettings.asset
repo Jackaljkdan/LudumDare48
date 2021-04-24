@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Deeper/Scenes/Castle.unity
+    guid: fb6b72d6661d7294782170bb8dbf6e67
   m_configObjects: {}
