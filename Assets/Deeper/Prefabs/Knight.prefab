@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSlot: {fileID: 3996200157140304015}
-  aggroRangeSquared: 400
+  aggroRangeSquared: 200
 --- !u!114 &3996200156543094006
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ namespace Deeper
     {
         #region Inspector
 
-
+        public UnityEventKnightExplosion onExplosion = new UnityEventKnightExplosion();
 
         #endregion
 
@@ -46,6 +46,8 @@ namespace Deeper
 
                 var body = gameObject.AddComponent<Rigidbody>();
                 body.AddExplosionForce(explosionForce, projectilePosition, projectileRadius);
+
+                onExplosion.Invoke(this);
 
                 Destroy(GetComponent<KnightAttackCloseRange>());
                 Destroy(GetComponent<KnightMove>());

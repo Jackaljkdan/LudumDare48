@@ -11,12 +11,15 @@ namespace Deeper
     {
         #region Inspector
 
-
+        public bool canExplode = false;
 
         #endregion
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!canExplode)
+                return;
+
             if (other.TryGetComponent(out ProjectileHitEffect projectileHit))
             {
                 GetComponent<Collider>().enabled = false;
