@@ -26,6 +26,8 @@ namespace Deeper
 
         #endregion
 
+        public float CurrentRadius => GetComponent<SphereCollider>().radius;
+
         private void Start()
         {
             var collider = GetComponent<SphereCollider>();
