@@ -49,7 +49,7 @@ CharacterController:
   m_Height: 4
   m_Radius: 0.8
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3818e22315b0c9a4592e8d332fab228a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 120
+  speed: 360
   directionReference: {fileID: 0}
   onInput:
     m_PersistentCalls:
@@ -175,6 +175,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &7748814865059038556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668056665407758530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a4ea2b0bf9f5442a8088820ab72cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileParent: {fileID: 0}
+  directionReference: {fileID: 0}
 --- !u!1001 &754322132330142179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,6 +363,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71a0f651b3f611d45a0097cdcf87742d, type: 3}
+--- !u!1 &6668056665407758530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6268537679840737569, guid: 71a0f651b3f611d45a0097cdcf87742d,
+    type: 3}
+  m_PrefabInstance: {fileID: 754322132330142179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6668056665407758531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6268537679840737568, guid: 71a0f651b3f611d45a0097cdcf87742d,
