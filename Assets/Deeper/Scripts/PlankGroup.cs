@@ -24,12 +24,21 @@ namespace Deeper
                 var projectilePosition = projectileHit.transform.position;
                 var projectileRadius = projectileHit.CurrentRadius;
 
+                List<Transform> children = new List<Transform>(transform.childCount);
+
                 foreach (Transform child in transform)
+                    children.Add(child);
+
+                foreach (Transform child in children)
                 {
+                    child.GetComponent<Plank>().enabled = true;
                     child.GetComponent<Collider>().enabled = true;
                     var body = child.gameObject.AddComponent<Rigidbody>();
                     body.AddExplosionForce(100, projectilePosition, projectileRadius);
+                    child.SetParent(transform.parent);
                 }
+
+                Destroy(gameObject);
             }
         }
     }
