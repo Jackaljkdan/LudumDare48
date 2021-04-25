@@ -58,6 +58,8 @@ namespace Deeper
                 sphereCollider.radius = Mathf.Lerp(initialRadius, finalRadius, (Time.time - initialTime) / duration);
                 yield return null;
             }
+
+            Destroy(gameObject);
         }
 
         private void OnTriggerEnter(Collider other)
