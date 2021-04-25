@@ -13,7 +13,7 @@ namespace Deeper
 
         public float stopDistanceSquared = 4;
 
-        public float speed = 10;
+        public float speed = 4;
 
         #endregion
 
@@ -45,7 +45,7 @@ namespace Deeper
 
             bool reached = HasReachedDestination;
 
-            if (!reached)
+            if (!reached && !GetComponent<Animator>().GetBool("Move"))
                 StartCoroutine(ReachDestinationCoroutine());
 
             return !reached;
@@ -70,7 +70,7 @@ namespace Deeper
             while (CurrentDestination.HasValue)
             {
                 Vector3 direction = (CurrentDestination.Value - transform.position).normalized;
-                character.SimpleMove(direction * Time.deltaTime * speed);
+                character.SimpleMove(direction * speed);
                 transform.forward = Vector3.Lerp(transform.forward, direction, 0.5f);
 
                 if (HasReachedDestination)

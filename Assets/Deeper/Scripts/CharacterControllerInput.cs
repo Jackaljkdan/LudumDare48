@@ -25,20 +25,26 @@ namespace Deeper
 
         #endregion
 
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         private void Update()
         {
             var cc = GetComponent<CharacterController>();
 
             Vector3 velocity = new Vector3(
-                Input.GetAxis("Horizontal") * speed * Time.deltaTime,
+                Input.GetAxis("Horizontal"),
                 0,
-                Input.GetAxis("Vertical") * speed * Time.deltaTime
+                Input.GetAxis("Vertical")
             );
 
             //Debug.Log($"vel {velocity}");
             //Debug.Log($"input {Input.GetAxis("Horizontal")} {Input.GetAxis("Vertical")}");
+            //Debug.Log($"trans dir: {directionReference.TransformDirection(velocity)} trans vect: {directionReference.TransformVector(velocity)}");
 
-            Vector3 directedVelocity = directionReference.TransformDirection(velocity);
+            Vector3 directedVelocity = directionReference.TransformDirection(velocity) * speed;
             cc.SimpleMove(directedVelocity);
 
             if (velocity.sqrMagnitude > 0)
