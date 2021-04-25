@@ -41,6 +41,9 @@ namespace Deeper
                     weaponBody.AddExplosionForce(explosionForce, projectilePosition, projectileRadius);
                 }
 
+                foreach (var particles in GetComponentsInChildren<ParticleSystem>())
+                    particles.Stop();
+
                 foreach (var collider in GetComponentsInChildren<Collider>())
                     collider.enabled = true;
 
