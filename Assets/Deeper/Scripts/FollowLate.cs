@@ -17,7 +17,10 @@ namespace Deeper
         private void LateUpdate()
         {
             if (target)
+            {
                 transform.position = target.position;
+                transform.rotation = target.rotation;
+            }
         }
     }
     

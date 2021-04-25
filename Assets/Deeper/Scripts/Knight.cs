@@ -15,7 +15,26 @@ namespace Deeper
         [SerializeField]
         private Transform weaponSlot = null;
 
+        [SerializeField]
+        private float aggroRangeSquared = 100;
+
         #endregion
+
+        private Transform player;
+
+        private void Start()
+        {
+            player = FindObjectOfType<CharacterControllerInput>().transform;
+        }
+
+        private void Update()
+        {
+            if (player == null)
+                return;
+
+            if ((player.position - transform.position).sqrMagnitude <= aggroRangeSquared)
+                GetComponent<KnightAttackCloseRange>().Attack(player);
+        }
     }
     
     [Serializable]
