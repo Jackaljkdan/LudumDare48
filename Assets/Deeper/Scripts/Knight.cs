@@ -20,6 +20,8 @@ namespace Deeper
 
         #endregion
 
+        public Transform Weapon => weaponSlot.childCount > 0 ? weaponSlot.GetChild(0) : null;
+
         private Transform player;
 
         private void Start()
